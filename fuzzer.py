@@ -64,7 +64,7 @@ if __name__ == "__main__":
     random.seed() # For the competition, `seed()` with no arguments uses the system time to ensure each run has a fresh random seed
 
     seed_inputs = get_initial_corpus()
-    fast_schedule = gbf.AFLFastSchedule(5)
+    fast_schedule = gbf.AFLFastSchedule(10)
     line_runner = mf.FunctionCoverageRunner(entrypoint)
 
     fast_fuzzer = gbf.CountingGreyboxFuzzer(seed_inputs, gbf.Mutator(), fast_schedule)
